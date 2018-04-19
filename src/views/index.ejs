@@ -6,20 +6,35 @@
 <head>
   <meta charset="utf-8">
   <title>Welcome!</title>
+
+
   <base href="/">
 
   <!-- Estilos de la aplicacion -->
   <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5">
+  <style>
+  html, body {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0;
+      margin: 0;
+  }
+  </style>
 </head>
 
 <body>
   <%- include partials/header %>
+  <div id="left"></div>
+  <div id="right"></div>
     <div class="container">
       <div class="content">
-        <h1>Welcome!</h1>
-        <button type="button" class="btm btm-primary moveButton" data-move=right>Activate Right!</button>
-
+  
         <div id="j1" class="joystick">
         </div>
         <div id="j2" class="joystick">

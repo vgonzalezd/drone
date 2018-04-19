@@ -32,7 +32,7 @@
         zone: document.getElementById('j1'),
         color: 'white',
         mode: 'static',
-        position: {left:"300px", top:"50%"},
+        position: {left:"20%", top:"50%"},
         size: 200
     });
 
@@ -40,7 +40,7 @@
         zone: document.getElementById('j2'),
         color: 'red',
         mode: 'static',
-        position: {left:"100px", top:"50%"},
+        position: {left:"80%", top:"50%"},
         size: 200
     });
 
