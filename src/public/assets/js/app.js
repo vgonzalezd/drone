@@ -8,6 +8,7 @@
     $('.moveButton').click(function() {
         console.log(this.data);
         var movimiento=$(this).data('move');
+        console.log("move", $(this).data);
         $.ajax({
           type: 'post',
           dataType: 'json',
@@ -31,71 +32,47 @@
     var j1 = nipplejs.create({
         zone: document.getElementById('j1'),
         color: 'white',
-        mode: 'static',
-        position: {left:"300px", top:"50%"},
         size: 200
     });
 
     var j2 = nipplejs.create({
         zone: document.getElementById('j2'),
         color: 'red',
-        mode: 'static',
-        position: {left:"100px", top:"50%"},
         size: 200
     });
 
+
     j1.on("move", function(event, data){
-      //console.log(data.direction.x);
-      console.log(data.angle.radian);
-      var auxiliar=$(this).data.angle.radian('move');
+      var rads = data.angle.radian;
       $.ajax({
         type: 'post',
         dataType: 'json',
         url: base + '/action',
-        data: { move: auxiliar },
+        data: {
+          rads: rads,
+          pos : 'vertical'
+        },
       })
-      .done(function(data) {
-        console.log("success");
-        console.log(data);
-        alert(data.result);
-      })
-      .fail(function() {
-        console.log("error");
-      })
-      .always(function() {
-        console.log("complete");
+      .catch(function(error) {
+        console.log(error);
       });
     });
 
     j2.on("move", function(event, data){
-      console.log(data.direction.y);
-
+      var rads = data.angle.radian;
+      $.ajax({
+        type: 'post',
+        dataType: 'json',
+        url: base + '/action',
+        data: {
+          rads: rads,
+          pos : 'horizontal'
+        },
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
     });
-
-
-    // if (j1.data.direction.x!=0 & j2.data.direction.y!=0)
-    // cambio la ruta a action2 para que routes=>actionCtrl.action2 que le entra como parametros x, y
-    /*
-    var auxiliar=$(this).data.direction.y;
-    $.ajax({
-      type: 'post',
-      dataType: 'json',
-      url: base + '/action2',
-      data: { move: auxiliar },
-    })
-    .done(function(data) {
-      console.log("success");
-      console.log(data);
-      alert(data.result);
-    })
-    .fail(function() {
-      console.log("error");
-    })
-    .always(function() {
-      console.log("complete");
-    });
-    */
-
   });
 })();
 
