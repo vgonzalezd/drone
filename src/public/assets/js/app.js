@@ -7,12 +7,16 @@
     var j1 = nipplejs.create({
         zone: document.getElementById('j1'),
         color: 'white',
+        mode: 'static',
+        position: {left:"20%", top:"50%"},
         size: 200
     });
 
     var j2 = nipplejs.create({
         zone: document.getElementById('j2'),
         color: 'red',
+        mode: 'static',
+        position: {left:"80%", top:"50%"},
         size: 200
     });
 
