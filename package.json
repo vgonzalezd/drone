@@ -8,7 +8,8 @@
     "body-parser": "^1.18.2",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
-    "nipplejs": "^0.6.8"
+    "nipplejs": "^0.6.8",
+    "rosnodejs": "^2.2.0"
   },
   "scripts": {
     "start": "node index.js"

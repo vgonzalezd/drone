@@ -6,17 +6,29 @@ body {
   height: 100vh;
 }
 
-#dynamic {
-  width: 400px;
-  height: 400px;
-  background-color: #555555;
+#j1{
+  width: 100%;
+  height: 100vh;
+  background-color: #AAAAAA;
+  position: relative;
+  margin-right: 1em;
+}
+#j2{
+  width: 100%;
+  height: 100vh;
+  background-color: #AAAAAA;
+  position: relative;
+  margin-left: 1em;
 }
 
-.joystick{
-  width: 400px;
-  margin:20px;
-  height: 400px;
-  background-color: #AAAAAA;
+.niple-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.niples-content {
+
 }
 
 #left {
